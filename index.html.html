@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial calculator</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items:center ;
+            position: relative;
+            top: 200px;
+            background-image: url("https://thumbs.dreamstime.com/b/calculator-background-made-vector-illustration-39034340.jpg");
+            position: relative;
+            left: 70px;
+        }
+        .container{
+            background-image: url("https://thumbs.dreamstime.com/b/calculator-background-made-vector-illustration-39034340.jpg");
+            padding:2px 100px 100px 100px; 
+            position: relative;
+            border-radius: 30px;
+            box-shadow: 0 0 8px 4px rgb(31, 31, 31);
+        }
+        .input-field{
+            position: relative;
+            top:20px ;
+            width: 300px;
+            padding: 20px;
+            border-radius: 20px;
+            border-color: rgb(230, 226, 220);
+        }
+        .container button{
+            position: relative;
+            top: 30px;
+        }
+        .container p{
+            position: relative;
+            top: 20px;
+            color: red;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        button{
+            position: relative;
+            left: 120px;
+            padding: 15px;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            border: 1px solid rgb(232, 232, 188);
+            font-weight: bold;
+            background-color: cornflowerblue;
+        }
+        button:hover{
+            box-shadow:2px 3px 5px 5px #030303;
+            color: rgb(249, 244, 245);
+            background-color: #030303;
+        }
+        .result-para{
+            display: none;
+            position: relative;
+            left: 50px;
+            margin-top:50px ;
+            background-image: url("https://thumbs.dreamstime.com/b/calculator-background-made-vector-illustration-39034340.jpg");
+            color: #030303;
+            width: fit-content;
+            padding: 20px;
+            border-radius: 20px;
+
+        }
+        .image-text {
+  font-size: 40px;
+
+  background-image: url('http://getwallpapers.com/wallpaper/full/7/e/6/71832.jpg');
+  background-size: cover;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="image-text">Factorial Calculation</h1>
+        <input type="number" class="input-field" id="input_number" placeholder="Enter the Number">
+        <p class="warning-para" id="warning"></p>
+        <button  onclick="factorial_calculator()">Calculate</button>
+        <p class="result-para" id="result"></p>
+    </div>
+    <script>
+        function factorial_calculator()
+        {
+            var num = parseInt( document.getElementById("input_number").value) ;
+            console.log(num);
+            if(isNaN(num) || num <= 0)
+            {
+                document.getElementById("warning").innerHTML ="please enter a valid non-negative number" ;
+                return ;
+                
+            }
+            else
+            {
+                document.getElementById("warning").innerHTML= " " ;
+            }
+            var factorial = 1 ;
+            for(var i = 1 ; i <= num ; i++)
+            {
+                factorial *= i ;
+
+            }
+            document.getElementById("result").style.display = "block";
+            document.getElementById("result").innerHTML = "factorail of " + num + " is " + factorial;
+
+
+
+
+        }
+    </script>
+</body>
+</html>
